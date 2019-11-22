@@ -1,10 +1,11 @@
 const HDWalletProvider = require('truffle-hdwallet-provider');
 const Web3 = require('web3');
 const { interface, bytecode } = require('./compile');
+require('dotenv').config()
 
 const provider = new HDWalletProvider(
-  'erosion country method mule already galaxy ripple picnic welcome dawn pluck lend',
-  'https://rinkeby.infura.io/v3/8ccb827b2a7f4603b5f9c96891565410'
+  process.env.MNEMONIC,
+  process.env.ENDPOINT
 );
 
 const web3 = new Web3(provider);
